@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>myMailer Control Panal</title>
+
+    <!-- Bootstrap core CSS -->
+    <!-- <link href="node_modules/mdbootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
+    <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="../bower_components/fontawesome/web-fonts-with-css/css/fontawesome-all.css" rel="stylesheet">
+
+    <!-- Material Design Bootstrap -->
+    <link href="../node_modules/mdbootstrap/css/mdb.min.css" rel="stylesheet">
+
+    <!-- Preload -->
+    <link rel="stylesheet" href="../node_modules/preload.js/dist/css/preload.css">
+    <!-- Your custom styles (optional) -->
+    <link href="../node_modules/mdbootstrap/css/style.css" rel="stylesheet">
+
+  </head>
+
+  <style media="screen">
+    body{
+      background-color: rgb(235, 235, 235);
+    }
+
+
+  </style>
+  <body>
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark blue fixed-top">
+
+      <!-- Navbar brand -->
+      <a class="navbar-brand th_font" href="#"><i class="fas fa-envelope-open text-white"></i> myMailer</a>
+
+      <!-- Collapse button -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav" aria-controls="basicExampleNav"
+          aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Collapsible content -->
+      <div class="collapse navbar-collapse" id="basicExampleNav">
+
+          <!-- Links -->
+          <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                  <a class="nav-link" href="#">Home
+                      <span class="sr-only">(current)</span>
+                  </a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#">Features</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#">Pricing</a>
+              </li>
+
+              <!-- Dropdown -->
+              <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                  <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                      <a class="dropdown-item" href="#">Action</a>
+                      <a class="dropdown-item" href="#">Another action</a>
+                      <a class="dropdown-item" href="#">Something else here</a>
+                  </div>
+              </li>
+
+          </ul>
+          <!-- Links -->
+      </div>
+      <!-- Collapsible content -->
+
+    </nav>
+    <!--/.Navbar-->
+    <!--Main layout-->
+    <main>
+
+      <div class="pd-10 mb-10" style="margin-top: 50px;">
+        <div class="container-fluid pt-20">
+          <div class="row">
+            <div class="col-sm-12 col-md-3">
+              <div class="row">
+                <div class="col-4">
+                  <img src="../images/user-icon-1.png" alt="" style="width: 100%;">
+                </div>
+                <div class="col-8">
+                  <div class="th_font fs15">
+                    ฐากูร ปราบปรี
+                  </div>
+                </div>
+              </div>
+              <div class="row pt-20">
+                <div class="col-sm-12">
+                  <div class="menu-item" onclick="window.location = 'index.html'">
+                    <i class="fas fa-tachometer-alt mr-5"></i> Dashboard
+                  </div>
+                </div>
+                <div class="col-sm-12">
+                  <div class="menu-item" onclick="window.location = 'mailer-repo-list.html'">
+                    <i class="fas fa-envelope mr-5"></i> Mailer repository
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-12 col-md-9" style="line-height: 18px; padding-top: 0px;">
+              <div class="text-left pb-10">
+                <!-- sample modal content -->
+                <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                  <form class="createRepoForm" onsubmit="return false;">
+                    <div class="modal-dialog">
+                      <div class="modal-content text-left">
+                        <div class="modal-header" style="background: rgb(0, 117, 255);">
+                          <h5 class="modal-title text-left text-white" id="myModalLabel">Create new repository</h5>
+                            <button type="button" class="btnCloseModal close text-white" data-dismiss="modal" aria-hidden="true">×</button>
+                        </div>
+                        <div class="modal-body">
+                          <h5 class="mb-15">Enter you e-mail account and password</h5>
+                            <div class="form-group">
+                              <input type="text" id="txtReposender" class="form-control th_font custom-2" placeholder="Sender name ...">
+                            </div>
+                            <div class="form-group">
+                              <input type="text" id="txtRepoemail" class="form-control th_font custom-2" placeholder="E-mail address ...">
+                            </div>
+                            <div class="form-group">
+                              <input type="text" id="txtRepopassword" class="form-control th_font custom-2" placeholder="Password ...">
+                            </div>
+
+                        </div>
+                        <div class="modal-footer">
+                          <button type="submit" class="btn btn-primary"  >Create</button>
+                          <button type="reset" class="btn btn-light btnCloseModal" data-dismiss="modal">Close</button>
+                        </div>
+                      </div>
+                      <!-- /.modal-content -->
+                    </div>
+                    <!-- /.modal-dialog -->
+                  </form>
+                </div>
+                <!-- /.modal -->
+                <button class="btn btn-primary ml-0" data-toggle="modal" data-target="#myModal"><i class="fas fa-plus text-white"></i> Create repository</button>
+              </div>
+
+              <div id="repoSpan">
+
+              </div>
+
+
+
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Feed -->
+      <div style="margin-bottom: 70px;">
+        <!--Card-->
+
+
+
+
+      </div>
+      <!-- End feed -->
+    </main>
+    <!--Main layout-->
+
+    <!--Footer-->
+    <footer class="footer dn">
+      <div class="bg-white pd-10">
+        <div class="container-fluid">
+          <div class="row th_font">
+            <div class="col text-center">
+              <a href="" class="text-primary" style="font-size: 1em;"><i class="fas fa-calendar"></i></a>
+            </div>
+            <div class="col text-center">
+              <a href="" class="text-dark" style="font-size: 1em;"><i class="fas fa-gift"></i></a>
+            </div>
+            <div class="col text-center">
+              <a href="" class="text-dark" style="font-size: 1em;"><i class="fas fa-bell"></i></a>
+            </div>
+            <div class="col text-center">
+              <a href="" class="text-dark" style="font-size: 1em;"><i class="fas fa-ellipsis-v"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!--Footer-->
+
+
+    <!-- SCRIPTS -->
+    <!-- JQuery -->
+    <script type="text/javascript" src="../node_modules/mdbootstrap/js/jquery-3.3.1.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="../node_modules/mdbootstrap/js/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <!-- <script type="text/javascript" src="../node_modules/mdbootstrap/js/bootstrap.min.js"></script> -->
+    <script type="text/javascript" src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="../node_modules/mdbootstrap/js/mdb.min.js"></script>
+
+    <script type="text/javascript" src="../assets/js/main.js"></script>
+    <script type="text/javascript" src="../assets/js/function.js"></script>
+    <script type="text/javascript" src="../assets/js/custom.js"></script>
+    <script type="text/javascript" src="../node_modules/preload.js/dist/js/preload.js"></script>
+
+    <script type="text/javascript">
+
+      $height = $(document).height();
+      $login_height = $('#login').height();
+
+      $(document).ready(function(){
+        $('#login').css('margin-top', (($height/2) - ($login_height/2)) + 'px')
+        repository.load_email_repo(current_user)
+      })
+
+      $(function(){
+        $('.btnCloseModal').click(function(){
+          $('#txtRepoemail').val('')
+          $('#txtRepopassword').val('')
+          $('.form-control').removeClass('is-invalid')
+        })
+        $('.createRepoForm').submit(function(){
+          check = 0
+          $('.form-control').removeClass('is-invalid')
+
+          if($('#txtReposender').val() == ''){
+            check++
+            $('#txtReposender').addClass('is-invalid')
+          }
+
+          if($('#txtRepoemail').val() == ''){
+            check++
+            $('#txtRepoemail').addClass('is-invalid')
+          }
+
+          if($('#txtRepopassword').val() == ''){
+            check++
+            $('#txtRepopassword').addClass('is-invalid')
+          }
+
+          if(check != 0){
+            return false;
+          }
+
+          preload.show()
+
+          repository.create_repo(current_user)
+
+        })
+      })
+    </script>
+  </body>
+</html>

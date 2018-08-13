@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title></title>
+
+    <!-- Bootstrap core CSS -->
+    <!-- <link href="node_modules/mdbootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
+    <link href="./bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- <link href="../../bower_components/fontawesome/web-fonts-with-css/css/fontawesome-all.css" rel="stylesheet"> -->
+
+    <!-- Material Design Bootstrap -->
+    <link href="node_modules/mdbootstrap/css/mdb.min.css" rel="stylesheet">
+
+    <!-- Preload -->
+    <link rel="stylesheet" href="node_modules/preload.js/dist/css/preload.css">
+    <!-- Your custom styles (optional) -->
+    <link href="node_modules/mdbootstrap/css/style.css" rel="stylesheet">
+
+  </head>
+
+  <style media="screen">
+    body{
+      background-color: rgb(0, 119, 228);
+    }
+
+    .custom-1{
+      background: rgb(0, 119, 228);
+      border: solid;
+      border-radius: 0px;
+      border-width: 0px 0px 2px 0px;
+      border-color: rgb(217, 217, 217);
+      color: #fff !important;
+    }
+
+    .custom-1::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+        color: #fff;
+        opacity: .6; /* Firefox */
+    }
+
+    .custom-1:-ms-input-placeholder { /* Internet Explorer 10-11 */
+        color: red;
+    }
+
+    .custom-1::-ms-input-placeholder { /* Microsoft Edge */
+        color: red;
+    }
+
+    .custom-1:focus{
+      background: rgb(0, 119, 228);
+      outline: none;
+    }
+  </style>
+  <body>
+
+    <!--Main layout-->
+    <main>
+      <div class="container pl-20 pr-20" id="login">
+        <div class="row h-100 justify-content-center align-items-center">
+          <div class="col-10 col-md-4">
+            <h4 class="text-center text-light">Registration</h4>
+            <h1 class="text-center text-light" style="font-size: 4.5em;">success</h1>
+
+            <!-- <div id="notifyDiv" class="mt-20 pd-20 text-center text-light" style="background: rgba(157, 157, 157, 0.52);">
+              Click button below and go to log in.
+            </div> -->
+            <form class="mt-20" id="loginForm_" autocomplete="off" onsubmit="return false;">
+              <div class="form-group mt-20">
+                <button class="btn btn-block btn-pink btn-lg" onclick="window.location = 'index.html'">Back to Log In</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!--Main layout-->
+
+    <!--Footer-->
+    <footer>
+
+    </footer>
+    <!--Footer-->
+
+
+    <!-- SCRIPTS -->
+    <!-- JQuery -->
+    <script type="text/javascript" src="node_modules/mdbootstrap/js/jquery-3.3.1.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="node_modules/mdbootstrap/js/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <!-- <script type="text/javascript" src="node_modules/mdbootstrap/js/bootstrap.min.js"></script> -->
+    <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="node_modules/mdbootstrap/js/mdb.min.js"></script>
+
+    <script type="text/javascript" src="assets/js/main.js"></script>
+    <script type="text/javascript" src="node_modules/preload.js/dist/js/preload.js"></script>
+
+    <script type="text/javascript">
+      $height = $(document).height();
+      $login_height = $('#login').height();
+
+      $(document).ready(function(){
+        $('#login').css('margin-top', (($height/2) - ($login_height/2)) + 'px')
+        preload.hide()
+      })
+
+      $(function(){
+        $('#loginForm').submit(function(){
+          check = 0
+          $('.form-control').removeClass('is-invalid')
+          $('#notifyDiv').text('Enter your e-mail and password')
+          $('#notifyDiv').addClass('dn')
+
+          if($('#txtUsername').val() == ''){
+            check++
+            $('#txtUsername').addClass('is-invalid')
+          }
+
+          if($('#txtPassword').val() == ''){
+            check++
+            $('#txtPassword').addClass('is-invalid')
+          }
+
+          if(check != 0){
+            $('#notifyDiv').removeClass('dn')
+            return false;
+          }
+
+          preload.show()
+
+
+        })
+      })
+    </script>
+  </body>
+</html>

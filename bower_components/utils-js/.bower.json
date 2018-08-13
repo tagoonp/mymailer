@@ -1,0 +1,31 @@
+{
+  "name": "utils-js",
+  "homepage": "https://github.com/surdu/utils-js",
+  "authors": [
+    "Surdu Nicolae"
+  ],
+  "description": "A collection of usefull little JavaScript utils",
+  "main": "dist/utils.min.js",
+  "moduleType": [
+    "globals",
+    "node"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "_release": "021bc9f2f7",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "021bc9f2f77523e59d51cdfe7c03bbfd5802f910"
+  },
+  "_source": "https://github.com/surdu/utils-js.git",
+  "_target": "*",
+  "_originalSource": "utils-js",
+  "_direct": true
+}

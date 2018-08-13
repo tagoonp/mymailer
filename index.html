@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>myMailer</title>
+
+    <!-- Bootstrap core CSS -->
+    <!-- <link href="node_modules/mdbootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="bower_components/fontawesome/web-fonts-with-css/css/fontawesome-all.css" rel="stylesheet">
+
+    <!-- Material Design Bootstrap -->
+    <link href="node_modules/mdbootstrap/css/mdb.min.css" rel="stylesheet">
+
+    <!-- Preload -->
+    <link rel="stylesheet" href="node_modules/preload.js/dist/css/preload.css">
+    <!-- Your custom styles (optional) -->
+    <link href="node_modules/mdbootstrap/css/style.css" rel="stylesheet">
+
+  </head>
+
+  <style media="screen">
+    body{
+      background-color: rgb(0, 119, 228);
+    }
+
+    .custom-1{
+      /* background: #1976d2; */
+      background: #bed6ed;
+      border: solid;
+      /* border-radius: 0px; */
+      border-width: 0px 0px 2px 0px;
+      border-color: rgb(217, 217, 217);
+      color: #616161 !important;
+    }
+
+    .custom-1::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+        color: #1976d2;
+        opacity: .6; /* Firefox */
+    }
+
+    .custom-1::placeholder:focus { /* Chrome, Firefox, Opera, Safari 10.1+ */
+        color: #8c9cab;
+        opacity: .6; /* Firefox */
+    }
+
+    .custom-1:-ms-input-placeholder { /* Internet Explorer 10-11 */
+        color: red;
+    }
+
+    .custom-1::-ms-input-placeholder { /* Microsoft Edge */
+        color: red;
+    }
+
+    .custom-1:focus{
+      background: rgb(0, 119, 228) ;
+      /* background: rgb(0, 119, 228); */
+      outline: none;
+      color: #fff !important;
+    }
+  </style>
+  <body>
+
+    <!--Main layout-->
+    <main>
+      <div class="container pl-20 pr-20" id="login">
+        <div class="row h-100 justify-content-center align-items-center">
+          <div class="col-md-6 col-sm-10">
+            <div class="text-center pb-20">
+              <i class="fas fa-envelope-open fa-5x text-white"></i>
+            </div>
+            <h1 class="text-center text-white mb-0" style="font-size: 3em;"><span style="color: rgb(255, 230, 0)">my</span>Mailer</h1>
+            <div id="notifyDiv" class="dn mt-20 pd-20 text-center text-white th_font" style="background: rgba(157, 157, 157, 0.52);">
+              กรอกอีเมล์แอดเดรสและรหัสผ่านของคุณ
+            </div>
+            <form class="mt-20" id="loginForm" autocomplete="off" onsubmit="return false;">
+              <div class="form-group">
+                <input type="text" class="form-control custom-1 text-center th_font" id="txtUsername" placeholder="E-mail address">
+              </div>
+              <div class="form-group mt-20">
+                <input type="password" class="form-control custom-1 text-center th_font" id="txtPassword" placeholder="Password">
+              </div>
+              <div class="form-group mt-20">
+                <!-- <button class="btn btn-block btn-blue btn-lg th_font" style="font-size: 1.3em; box-shadow: none; border: solid; border-width: 1px; border-color: #fff;" type="submit">ล๊อคอิน</button> -->
+                <button class="btn btn-block btn-pink btn-lg th_font" style="font-size: 1.3em; " type="submit">Log in</button>
+              </div>
+            </form>
+            <div class="text-center text-white">
+              <a href="register.html" class="mr-10 text-white th_font">Register</a> | <a href="resetpassword.html" class="ml-10 text-white th_font">Reset password</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!--Main layout-->
+
+    <!--Footer-->
+    <footer>
+
+    </footer>
+    <!--Footer-->
+
+
+    <!-- SCRIPTS -->
+    <!-- JQuery -->
+    <script type="text/javascript" src="node_modules/mdbootstrap/js/jquery-3.3.1.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="node_modules/mdbootstrap/js/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <!-- <script type="text/javascript" src="node_modules/mdbootstrap/js/bootstrap.min.js"></script> -->
+    <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="node_modules/mdbootstrap/js/mdb.min.js"></script>
+
+    <script type="text/javascript" src="assets/js/main.js"></script>
+    <script type="text/javascript" src="assets/js/function.js"></script>
+    <script type="text/javascript" src="node_modules/preload.js/dist/js/preload.js"></script>
+
+    <script type="text/javascript">
+      $height = $(document).height();
+      $login_height = $('#login').height();
+
+      $(document).ready(function(){
+        $('#login').css('margin-top', (($height/2) - ($login_height/2)) + 'px')
+        preload.hide()
+      })
+
+      $(function(){
+        $('#loginForm').submit(function(){
+          check = 0
+          $('.form-control').removeClass('is-invalid')
+          $('#notifyDiv').text('กรอกอีเมล์แอดเดรสและรหัสผ่าน')
+          $('#notifyDiv').addClass('dn')
+
+          if($('#txtUsername').val() == ''){
+            check++
+            $('#txtUsername').addClass('is-invalid')
+          }
+
+          if($('#txtPassword').val() == ''){
+            check++
+            $('#txtPassword').addClass('is-invalid')
+          }
+
+          if(check != 0){
+            $('#notifyDiv').removeClass('dn')
+            return false;
+          }
+
+          preload.show()
+
+          var param = {
+            username: $('#txtUsername').val(),
+            password: $('#txtPassword').val()
+          }
+
+          var jxr = $.post(config.ws_url + 'login.php', param, function(){}, 'json')
+                     .always(function(snap){
+                        if(fnc.checksnap(snap)){
+                          snap.forEach(function(i){
+                            window.localStorage.setItem(config.prefix + 'uid', i.uid)
+                            if(i.admin_role == '1'){
+                              window.location = 'administrator/index.html'
+                            }else{
+                              window.location = 'common/index.html'
+                            }
+                          })
+                        }else{
+                          preload.hide()
+                        }
+                     })
+                     .fail(function(){
+                       main.error_log()
+                     })
+
+
+        })
+      })
+    </script>
+  </body>
+</html>

@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>myMailer Control Panal</title>
+
+    <!-- Bootstrap core CSS -->
+    <!-- <link href="node_modules/mdbootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
+    <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="../bower_components/fontawesome/web-fonts-with-css/css/fontawesome-all.css" rel="stylesheet">
+
+    <!-- Material Design Bootstrap -->
+    <link href="../node_modules/mdbootstrap/css/mdb.min.css" rel="stylesheet">
+
+    <!-- Preload -->
+    <link rel="stylesheet" href="../node_modules/preload.js/dist/css/preload.css">
+    <!-- Your custom styles (optional) -->
+    <link href="../node_modules/mdbootstrap/css/style.css" rel="stylesheet">
+
+  </head>
+
+  <style media="screen">
+    body{
+      background-color: rgb(235, 235, 235);
+    }
+
+    .custom-1{
+      background: rgb(0, 119, 228);
+      border: solid;
+      border-radius: 0px;
+      border-width: 0px 0px 2px 0px;
+      border-color: rgb(217, 217, 217);
+      color: #fff !important;
+    }
+
+    .custom-1::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+        color: #fff;
+        opacity: .6; /* Firefox */
+    }
+
+    .custom-1:-ms-input-placeholder { /* Internet Explorer 10-11 */
+        color: red;
+    }
+
+    .custom-1::-ms-input-placeholder { /* Microsoft Edge */
+        color: red;
+    }
+
+    .custom-1:focus{
+      background: rgb(0, 119, 228);
+      outline: none;
+    }
+  </style>
+  <body>
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark blue fixed-top">
+
+      <!-- Navbar brand -->
+      <a class="navbar-brand th_font" href="#"><i class="fas fa-envelope-open text-white"></i> myMailer</a>
+
+      <!-- Collapse button -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav" aria-controls="basicExampleNav"
+          aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Collapsible content -->
+      <div class="collapse navbar-collapse" id="basicExampleNav">
+
+          <!-- Links -->
+          <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                  <a class="nav-link" href="#">Home
+                      <span class="sr-only">(current)</span>
+                  </a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#">Features</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#">Pricing</a>
+              </li>
+
+              <!-- Dropdown -->
+              <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                  <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                      <a class="dropdown-item" href="#">Action</a>
+                      <a class="dropdown-item" href="#">Another action</a>
+                      <a class="dropdown-item" href="#">Something else here</a>
+                  </div>
+              </li>
+
+          </ul>
+          <!-- Links -->
+      </div>
+      <!-- Collapsible content -->
+
+    </nav>
+    <!--/.Navbar-->
+    <!--Main layout-->
+    <main>
+
+      <div class="pd-10 mb-10" style="margin-top: 50px;">
+        <div class="container-fluid pt-20">
+          <div class="row">
+            <div class="col-3">
+              <div class="row">
+                <div class="col-4">
+                  <img src="../images/user-icon-1.png" alt="" style="width: 100%;">
+                </div>
+                <div class="col-8">
+                  <div class="th_font fs15">
+                    ฐากูร ปราบปรี
+                  </div>
+                </div>
+              </div>
+              <div class="row pt-20">
+                <div class="col-sm-12">
+                  <div class="menu-item" onclick="window.location = 'index.html'">
+                    <i class="fas fa-tachometer-alt mr-5"></i> Dashboard
+                  </div>
+                </div>
+                <div class="col-sm-12">
+                  <div class="menu-item" onclick="window.location = 'mailer-repo-list.html'">
+                    <i class="fas fa-envelope mr-5"></i> Mailer repository
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-6" style="line-height: 18px; padding-top: 0px;">
+              <div class="card mb-10">
+                <!-- Card footer -->
+                <div class="mdb-color_ lighten-3 text-left pl-20" style="background: rgb(0, 121, 232);">
+                    <div class="row th_font" style="border: solid; border-width: 1px 0px 0px 0px; border-color: rgb(236, 236, 236); padding-top: 14px; padding-bottom: 14px;">
+                      <div class="col text-center">
+                        <a href="" class="text-dark" style="font-size: 0.9em;"><i class="fas fa-plus text-dark"></i> Create repository</a>
+                      </div>
+                    </div>
+                </div>
+                  <!--Card image-->
+                  <div class="view overlay">
+                      <img src="../images/cover_20180812_082300.png" class="card-img-top" alt="sample">
+                      <a>
+                          <div class="mask rgba-white-slight"></div>
+                      </a>
+                  </div>
+                  <!--/.Card image-->
+                  <!--Card content-->
+                  <div class="card-body" style="background: rgb(244, 244, 244);">
+                      <!--Text-->
+                      <div class="th_font text-danger fs12 lh15">12 สิงหาคม พ.ศ. 2561 - 18 สิงหาคม พ.ศ. 2561</div>
+                      <h4 class="card-title th_font fs19 fw400 mb-0 lh35" >ผ้าสร้างสุข...สัญจร</h4>
+                      <p class="font-small grey-dark-text th_font mb-0 fs15 lh18" style="">
+                        ชั้น 1 ศูนย์กีฬา มหาวิทยาลัยสงขลานครินร์
+                      </p>
+                  </div>
+                  <!--/.Card content-->
+
+                  <!-- Card footer -->
+              </div>
+              <!--/.Card-->
+
+              <div class="card mb-10">
+                  <!--Card image-->
+                  <div class="view overlay">
+                      <img src="https://mdbootstrap.com/img/Photos/Others/food.jpg" class="card-img-top" alt="sample">
+                      <a>
+                          <div class="mask rgba-white-slight"></div>
+                      </a>
+                  </div>
+                  <!--/.Card image-->
+                  <!--Card content-->
+                  <div class="card-body" style="background: rgb(244, 244, 244);">
+                      <!--Text-->
+                      <div class="th_font text-danger lh15">12 สิงหาคม พ.ศ. 2561 - 18 สิงหาคม พ.ศ. 2561</div>
+                      <h4 class="card-title th_font fs19 fw400 mb-0 lh35">ผ้าสร้างสุข</h4>
+                      <p class="font-small grey-dark-text th_font mb-0 fs15 lh18">
+                        ชั้น 1 ศูนย์กีฬา มหาวิทยาลัยสงขลานครินร์
+                      </p>
+                  </div>
+                  <!--/.Card content-->
+                  <!-- Card footer -->
+                  <div class="mdb-color_ lighten-3 text-center" style="background: rgb(255, 255, 255);">
+
+
+                      <div class="row th_font" style="border: solid; border-width: 1px 0px 0px 0px; border-color: rgb(236, 236, 236); padding-top: 7px; padding-bottom: 9px;">
+                        <div class="col text-center">
+                          <a href="" class="text-dark" style="font-size: 0.9em;"><i class="far fa-star text-dark"></i> สนใจ</a>
+                        </div>
+                        <div class="col text-center">
+                          <a href="" class="text-dark" style="font-size: 0.9em;"><i class="far fa-registered text-dark"></i> ลงทะเบียน</a>
+                        </div>
+                        <div class="col text-center">
+                          <a href="" class="text-dark" style="font-size: 0.9em;"><i class="fas fa-share-alt text-dark"></i> แชร์</a>
+                        </div>
+                      </div>
+                  </div>
+                  <!-- Card footer -->
+              </div>
+              <!--/.Card-->
+
+            </div>
+
+            <div class="col-3">
+              <div class="card card-cascade wider mb-4">
+
+                    <!-- Card content -->
+                    <div class="card-body card-body-cascade text-center">
+
+                      <!-- Title -->
+                      <h4 class="card-title"><strong>Alison Belmont</strong></h4>
+                      <!-- Subtitle -->
+                      <h5 class="blue-text pb-2"><strong>Graffiti Artist</strong></h5>
+                      <!-- Text -->
+                      <p class="card-text">Sed ut perspiciatis unde omnis iste natus sit voluptatem accusantium doloremque laudantium, totam rem aperiam. </p>
+
+                      <!-- Linkedin -->
+                      <a class="px-2 fa-lg li-ic"><i class="fa fa-linkedin"></i></a>
+                      <!-- Twitter -->
+                      <a class="px-2 fa-lg tw-ic"><i class="fa fa-twitter"></i></a>
+                      <!-- Dribbble -->
+                      <a class="px-2 fa-lg fb-ic"><i class="fa fa-facebook"></i></a>
+
+                    </div>
+
+                  </div>
+                  <!-- Card Wider -->
+            </div>
+          </div>
+
+
+          <div class="row th_font pt-20" >
+            <div class="col text-center">
+              <a href="#" class="text-dark" style="font-size: 0.8em;" onclick="create_activity()"><i class="fas fa-plus text-primary"></i> สร้างกิจกรรม</a>
+            </div>
+            <div class="col text-center">
+              <a href="#" class="text-dark" style="font-size: 0.8em;"><i class="fas fa-gift text-danger"></i> ใช้แต้มจิตอาสา</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Feed -->
+      <div style="margin-bottom: 70px;">
+        <!--Card-->
+
+
+
+
+      </div>
+      <!-- End feed -->
+    </main>
+    <!--Main layout-->
+
+    <!--Footer-->
+    <footer class="footer dn">
+      <div class="bg-white pd-10">
+        <div class="container-fluid">
+          <div class="row th_font">
+            <div class="col text-center">
+              <a href="" class="text-primary" style="font-size: 1em;"><i class="fas fa-calendar"></i></a>
+            </div>
+            <div class="col text-center">
+              <a href="" class="text-dark" style="font-size: 1em;"><i class="fas fa-gift"></i></a>
+            </div>
+            <div class="col text-center">
+              <a href="" class="text-dark" style="font-size: 1em;"><i class="fas fa-bell"></i></a>
+            </div>
+            <div class="col text-center">
+              <a href="" class="text-dark" style="font-size: 1em;"><i class="fas fa-ellipsis-v"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!--Footer-->
+
+
+    <!-- SCRIPTS -->
+    <!-- JQuery -->
+    <script type="text/javascript" src="../node_modules/mdbootstrap/js/jquery-3.3.1.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="../node_modules/mdbootstrap/js/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <!-- <script type="text/javascript" src="../node_modules/mdbootstrap/js/bootstrap.min.js"></script> -->
+    <script type="text/javascript" src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="../node_modules/mdbootstrap/js/mdb.min.js"></script>
+
+    <script type="text/javascript" src="../assets/js/main.js"></script>
+    <script type="text/javascript" src="../assets/js/function.js"></script>
+    <script type="text/javascript" src="../node_modules/preload.js/dist/js/preload.js"></script>
+
+    <script type="text/javascript">
+      $height = $(document).height();
+      $login_height = $('#login').height();
+
+      $(document).ready(function(){
+        $('#login').css('margin-top', (($height/2) - ($login_height/2)) + 'px')
+        preload.hide()
+      })
+
+      $(function(){
+        $('#loginForm').submit(function(){
+          check = 0
+          $('.form-control').removeClass('is-invalid')
+          $('#notifyDiv').text('Enter your e-mail and password')
+          $('#notifyDiv').addClass('dn')
+
+          if($('#txtUsername').val() == ''){
+            check++
+            $('#txtUsername').addClass('is-invalid')
+          }
+
+          if($('#txtPassword').val() == ''){
+            check++
+            $('#txtPassword').addClass('is-invalid')
+          }
+
+          if(check != 0){
+            $('#notifyDiv').removeClass('dn')
+            return false;
+          }
+
+          preload.show()
+
+          var param = {
+            username: $('#txtUsername').val(),
+            password: $('#txtPassword').val()
+          }
+
+          var jxr = $.post(config.ws_url + 'login.php', param, function(){}, 'json')
+                     .always(function(snap){
+                        if(fnc.checksnap(snap)){
+                          snap.forEach(function(i){
+                            window.localStorage.setItem(config.prefix + 'uid', i.uid)
+                            if(i.admin_role == '1'){
+                              window.location = 'administrator/index.html'
+                            }else{
+                              window.location = 'common/index.html'
+                            }
+                          })
+                        }else{
+                          preload.hide()
+                        }
+                     })
+                     .fail(function(){
+                       main.error_log()
+                     })
+
+
+        })
+      })
+
+      function create_activity(){
+
+        check = 0
+        $('.form-control').removeClass('is-invalid')
+        $('#event_name').css('background', 'rgb(255, 255, 255)')
+
+        if($('#event_name').val() == ''){
+          check++
+          $('#event_name').addClass('is-invalid')
+          $('#event_name').css('background', 'rgb(158, 208, 255)')
+        }
+
+        if(check != 0){
+          return false;
+        }
+
+        window.localStorage.setItem(config.prefix + 'event_title', $('#event_name').val())
+        window.location = 'create_event.html'
+
+        return false;
+
+      }
+    </script>
+  </body>
+</html>

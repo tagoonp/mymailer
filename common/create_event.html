@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title></title>
+
+    <!-- Bootstrap core CSS -->
+    <!-- <link href="node_modules/mdbootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
+    <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="../bower_components/fontawesome/web-fonts-with-css/css/fontawesome-all.css" rel="stylesheet">
+
+    <!-- Material Design Bootstrap -->
+    <link href="../node_modules/mdbootstrap/css/mdb.min.css" rel="stylesheet">
+
+    <!-- Preload -->
+    <link rel="stylesheet" href="../node_modules/preload.js/dist/css/preload.css">
+    <!-- Your custom styles (optional) -->
+    <link href="../node_modules/mdbootstrap/css/style.css" rel="stylesheet">
+
+  </head>
+
+  <style media="screen">
+    body{
+      background-color: rgb(235, 235, 235);
+    }
+
+    .custom-1{
+      background: rgb(0, 119, 228);
+      border: solid;
+      border-radius: 0px;
+      border-width: 0px 0px 2px 0px;
+      border-color: rgb(217, 217, 217);
+      color: #fff !important;
+    }
+
+    .custom-1::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+        color: #fff;
+        opacity: .6; /* Firefox */
+    }
+
+    .custom-1:-ms-input-placeholder { /* Internet Explorer 10-11 */
+        color: red;
+    }
+
+    .custom-1::-ms-input-placeholder { /* Microsoft Edge */
+        color: red;
+    }
+
+    .custom-1:focus{
+      background: rgb(0, 119, 228);
+      outline: none;
+    }
+  </style>
+  <body>
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark blue fixed-top">
+
+      <!-- Navbar brand -->
+      <a class="navbar-brand th_font" href="#">จิตอาสาแอพพลิเคชัน</a>
+
+      <!-- Collapse button -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav" aria-controls="basicExampleNav"
+          aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Collapsible content -->
+      <div class="collapse navbar-collapse" id="basicExampleNav">
+
+          <!-- Links -->
+          <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                  <a class="nav-link" href="index.html">หน้าแรก
+                      <span class="sr-only">(current)</span>
+                  </a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#">เกี่ยวกับโครงการ</a>
+              </li>
+              <!-- Dropdown -->
+              <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ข้อกำหนด</a>
+                  <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                      <a class="dropdown-item" href="#">เงื่อนไข</a>
+                      <a class="dropdown-item" href="#">นโยบายความเป็นส่วนตัว</a>
+                  </div>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#">บันทึกกิจกรรม</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#">การตั้งค่า</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="Javascript:main.signout()">ออกจากระบบ</a>
+              </li>
+
+
+
+          </ul>
+          <!-- Links -->
+      </div>
+      <!-- Collapsible content -->
+
+    </nav>
+    <!--/.Navbar-->
+    <!--Main layout-->
+    <main>
+
+      <div class="bg-white pd-0 mb-10" style="margin-top: 60px;">
+        <div class="container-fluid">
+
+          <div class="row">
+            <div class="col-12 pd-0 mb-0" style="border: solid; border-width: 0px 0px 1px 0px; border-color: rgb(201, 201, 201);">
+
+            </div>
+            <div class="col-12 pt-10" style=" font-size: 1em !important;">
+              <strong class="th_font fs18 text-primary">สร้างกิจกรรม</strong>
+              <div class="form-group mb-0 pb-0">
+                <input type="text" id="event_name" class="form-control th_font pl-0 pt-0" placeholder="ชื่อกิจกรรมที่นี่ ..." style="font-size: 1.4em !important; border: none !important; outline: none !important; border-radius: 0px;" autofocus>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-2 pd-0 mb-0 text-center" style="border: solid; border-width: 0px 0px 1px 0px; border-color: rgb(201, 201, 201);">
+              <div class="pd-10">
+                <i class="fas fa-calendar"></i>
+              </div>
+            </div>
+            <div class="col-10 pl-0" style="border: solid; border-width: 0px 0px 1px 0px; border-color: rgb(201, 201, 201);">
+              <div class="form-group mb-0 pb-0">
+                <input type="text" id="event_name" class="form-control th_font" placeholder="เวลาจัดกิจกรรม ..." style="border: none !important; outline: none !important; border-radius: 0px;">
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-2 pd-0 mb-0 text-center" style="border: solid; border-width: 0px 0px 1px 0px; border-color: rgb(201, 201, 201);">
+              <div class="pd-10">
+                <i class="fas fa-forward"></i>
+              </div>
+            </div>
+            <div class="col-10 pl-0" style="border: solid; border-width: 0px 0px 1px 0px; border-color: rgb(201, 201, 201);">
+              <div class="form-group mb-0 pb-0">
+                <select class="form-control th_font" name="" style="border: none;">
+                  <option value="">-- เลือกความถี่ --</option>
+                  <option value="">จัดครั้งเดียว</option>
+                  <option value="">ทุกวัน</option>
+                  <option value="">ทุกสัปดาห์</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-2 pd-0 mb-0 text-center" style="border: solid; border-width: 0px 0px 1px 0px; border-color: rgb(201, 201, 201);">
+              <div class="pd-10">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+            </div>
+            <div class="col-10 pl-0" style="border: solid; border-width: 0px 0px 1px 0px; border-color: rgb(201, 201, 201);">
+              <div class="form-group mb-0 pb-0">
+                <input type="text" id="event_name" class="form-control th_font" placeholder="สถานที่จัดกิจกรรม ..." style="border: none !important; outline: none !important; border-radius: 0px;">
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-2 pd-0 mb-0 text-center" style="border: solid; border-width: 0px 0px 1px 0px; border-color: rgb(201, 201, 201);">
+              <div class="pd-10">
+                <i class="fas fa-align-left"></i>
+              </div>
+            </div>
+            <div class="col-10 pl-0" style="border: solid; border-width: 0px 0px 1px 0px; border-color: rgb(201, 201, 201);">
+              <div class="form-group mb-0 pb-0">
+                <textarea id="event_name" class="form-control th_font" rows="3" placeholder="รายละเอียดหรือข้อมูลกิจกรรม (หากต้องการระบุแบบละเอียดให้ใช้ระบบผ่านเว็บไซต์) ..." style="border: none !important; outline: none !important; border-radius: 0px;"></textarea>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-2 pd-0 mb-0 text-center" style="border: solid; border-width: 0px 0px 1px 0px; border-color: rgb(201, 201, 201);">
+              <div class="pd-10">
+                <i class="fas fa-rss-square"></i>
+              </div>
+            </div>
+            <div class="col-10 pl-0" style="border: solid; border-width: 0px 0px 1px 0px; border-color: rgb(201, 201, 201);">
+              <div class="form-group mb-0 pb-0">
+                <input type="text" id="event_name" class="form-control th_font" placeholder="เว็บไซต์ประชาสัมพันธ์ ..." style="border: none !important; outline: none !important; border-radius: 0px;">
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-2 pd-0 mb-0 text-center" style="border: solid; border-width: 0px 0px 1px 0px; border-color: rgb(201, 201, 201);">
+              <div class="pd-10">
+                <i class="fas fa-eye"></i>
+              </div>
+            </div>
+            <div class="col-10 pl-0" style="border: solid; border-width: 0px 0px 1px 0px; border-color: rgb(201, 201, 201);">
+              <div class="form-group mb-0 pb-0">
+                <select class="form-control th_font" name="" style="border: none;">
+                  <option value="">-- เลือกการมองเห็น --</option>
+                  <option value="">จากทุกคน</option>
+                  <option value="">ผู้ที่เคยสนใจกิจกรรมของคุณเท่านั้น</option>
+                  <option value="">ผู้ที่เคยร่วมกิจกรรมของคุณเท่านั้น</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-2 pd-0 mb-0 text-center" style="border: solid; border-width: 0px 0px 1px 0px; border-color: rgb(201, 201, 201);">
+              <div class="pd-10">
+                <i class="fas fa-comment"></i>
+              </div>
+            </div>
+            <div class="col-10 pl-0" style="border: solid; border-width: 0px 0px 1px 0px; border-color: rgb(201, 201, 201);">
+              <div class="form-group mb-0 pb-0">
+                <select class="form-control th_font" name="" style="border: none;">
+                  <option value="">-- เลือกความเป็นส่วนตัว --</option>
+                  <option value="">ส่วนตัว</option>
+                  <option value="">สาธารณะ</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+
+
+          <div class="row">
+
+            <div class="col-12 pt-10" style=" font-size: 1.3em !important;">
+              <strong class="th_font text-primary font-weight: bold;">ภาพกิจกรรม (Cover image)</strong>
+              <div>
+                <button class="btn btn-light btn-sm btn-square btn-block th_font fs1">อัพโหลดรูป</button>
+              </div>
+            </div>
+
+            <div class="col-12 pt-10" style=" font-size: 1.3em !important;">
+              <strong class="th_font text-primary font-weight: bold;">การตั้งค่าระบบ</strong>
+            </div>
+            <div class="col-12 pt-10" style="border: solid; border-width: 0px 0px 1px 0px; border-color: rgb(201, 201, 201);">
+              <div class="form-group mb-0 pb-0">
+                <div class="row">
+                  <div class="col-3 text-left">
+                    <label class="switch">
+                      <input type="checkbox">
+                      <span class="slider round"></span>
+                    </label>
+                  </div>
+                  <label for="" class="col-9 th_font pl-0">ระบบรับลงทะเบียน <i class="fas fa-info-circle" style="float: right; margin-top: 10px;"></i></label>
+                </div>
+              </div>
+
+              <div class="form-group mb-0 pb-0">
+                <div class="row">
+                  <div class="col-3 text-left">
+                    <label class="switch">
+                      <input type="checkbox">
+                      <span class="slider round"></span>
+                    </label>
+                  </div>
+                  <label for="" class="col-9 th_font pl-0">ระบบตรวจสอบผู้เข้าร่วมกิจกรรม <i class="fas fa-info-circle" style="float: right; margin-top: 10px;"></i></label>
+                </div>
+              </div>
+
+              <div class="form-group mb-0 pb-0">
+                <div class="row">
+                  <div class="col-3 text-left">
+                    <label class="switch">
+                      <input type="checkbox">
+                      <span class="slider round"></span>
+                    </label>
+                  </div>
+                  <label for="" class="col-9 th_font pl-0">ระบบสะสมคะแนน (เฉพาะกิจกรรมนี้) <i class="fas fa-info-circle" style="float: right; margin-top: 10px;"></i></label>
+                </div>
+              </div>
+
+              <div class="form-group mb-0 pb-0">
+                <div class="row">
+                  <div class="col-3 text-left">
+                    <label class="switch">
+                      <input type="checkbox">
+                      <span class="slider round"></span>
+                    </label>
+                  </div>
+                  <label for="" class="col-9 th_font pl-0">ระบบรับผู้สนับสนุน <i class="fas fa-info-circle" style="float: right; margin-top: 10px;"></i></label>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="col-12 pt-10" style=" font-size: 1.3em !important;">
+              <strong class="th_font text-primary font-weight: bold;">การตั้งค่าอื่น ๆ</strong>
+            </div>
+
+            <div class="col-12 pt-10" style="border: solid; border-width: 0px 0px 1px 0px; border-color: rgb(201, 201, 201);">
+              <div class="form-group mb-0 pb-0">
+                <div class="row">
+                  <div class="col-3 text-left">
+                    <label class="switch">
+                      <input type="checkbox">
+                      <span class="slider round"></span>
+                    </label>
+                  </div>
+                  <label for="" class="col-9 th_font pl-0">แสดงรายชื่อผู้เข้าร่วมต่อสาธารณะ <i class="fas fa-info-circle" style="float: right; margin-top: 10px;"></i></label>
+                </div>
+              </div>
+              <div class="form-group mb-0 pb-0">
+                <div class="row">
+                  <div class="col-3 text-left">
+                    <label class="switch">
+                      <input type="checkbox">
+                      <span class="slider round"></span>
+                    </label>
+                  </div>
+                  <label for="" class="col-9 th_font pl-0">แสดงรายชื่อผู้เข้าร่วมต่อผู้สนับสนุน <i class="fas fa-info-circle" style="float: right; margin-top: 10px;"></i></label>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+
+          <div class="row th_font pt-10 pb-10" style="margin-bottom: 80px;">
+            <div class="col text-center">
+              <!-- <a href="#" class="text-dark" style="font-size: 0.8em;" onclick="create_activity()"><i class="fas fa-plus text-primary"></i> สร้างกิจกรรม</a> -->
+              <button class="btn btn-primary btn-sm fs1 btn-block ">สร้างกิจกรรม</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!--Main layout-->
+
+    <!--Footer-->
+    <footer class="footer">
+      <div class="bg-white pd-10">
+        <div class="container-fluid">
+          <div class="row th_font">
+            <div class="col text-center">
+              <a href="index.html" class="text-dark" style="font-size: 1em;"><i class="fas fa-calendar"></i></a>
+            </div>
+            <div class="col text-center">
+              <a href="" class="text-dark" style="font-size: 1em;"><i class="fas fa-gift"></i></a>
+            </div>
+            <div class="col text-center">
+              <a href="" class="text-dark" style="font-size: 1em;"><i class="fas fa-bell"></i></a>
+            </div>
+            <div class="col text-center">
+              <a href="" class="text-dark" style="font-size: 1em;"><i class="fas fa-ellipsis-v"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!--Footer-->
+
+
+    <!-- SCRIPTS -->
+    <!-- JQuery -->
+    <script type="text/javascript" src="../node_modules/mdbootstrap/js/jquery-3.3.1.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="../node_modules/mdbootstrap/js/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <!-- <script type="text/javascript" src="../node_modules/mdbootstrap/js/bootstrap.min.js"></script> -->
+    <script type="text/javascript" src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="../node_modules/mdbootstrap/js/mdb.min.js"></script>
+
+    <script type="text/javascript" src="../assets/js/main.js"></script>
+    <script type="text/javascript" src="../assets/js/function.js"></script>
+    <script type="text/javascript" src="../node_modules/preload.js/dist/js/preload.js"></script>
+
+    <script type="text/javascript">
+
+      $height = $(document).height();
+      $login_height = $('#login').height();
+
+      $(document).ready(function(){
+        preload.hide()
+      })
+
+      $(function(){
+        $('#loginForm').submit(function(){
+          check = 0
+          $('.form-control').removeClass('is-invalid')
+          $('#notifyDiv').text('Enter your e-mail and password')
+          $('#notifyDiv').addClass('dn')
+
+          if($('#txtUsername').val() == ''){
+            check++
+            $('#txtUsername').addClass('is-invalid')
+          }
+
+          if($('#txtPassword').val() == ''){
+            check++
+            $('#txtPassword').addClass('is-invalid')
+          }
+
+          if(check != 0){
+            $('#notifyDiv').removeClass('dn')
+            return false;
+          }
+
+          preload.show()
+
+          var param = {
+            username: $('#txtUsername').val(),
+            password: $('#txtPassword').val()
+          }
+
+          var jxr = $.post(config.ws_url + 'login.php', param, function(){}, 'json')
+                     .always(function(snap){
+                        if(fnc.checksnap(snap)){
+                          snap.forEach(function(i){
+                            window.localStorage.setItem(config.prefix + 'uid', i.uid)
+                            if(i.admin_role == '1'){
+                              window.location = 'administrator/index.html'
+                            }else{
+                              window.location = 'common/index.html'
+                            }
+                          })
+                        }else{
+                          preload.hide()
+                        }
+                     })
+                     .fail(function(){
+                       main.error_log()
+                     })
+
+
+        })
+      })
+
+      function create_activity(){
+
+        check = 0
+        $('.form-control').removeClass('is-invalid')
+        $('#event_name').css('background', 'rgb(255, 255, 255)')
+
+        if($('#event_name').val() == ''){
+          check++
+          $('#event_name').addClass('is-invalid')
+          $('#event_name').css('background', 'rgb(158, 208, 255)')
+        }
+
+        if(check != 0){
+          return false;
+        }
+
+        window.localStorage.setItem(config.prefix + 'event_title', $('#event_name').val())
+        window.location = 'create_event.html'
+
+        return false;
+
+      }
+    </script>
+  </body>
+</html>
